@@ -7,7 +7,7 @@ import numpy as np
 from kivy.clock import Clock
 
 #from tools import AudioPlayer
-from kivy.core.audio import SoundLoader
+#from kivy.core.audio import SoundLoader
 
 
 import time
@@ -68,13 +68,14 @@ def __init__(self, **kw):
     super().__init__(**kw)
     self.samples_per_second = 60 # variables which stores the number of audio samples recorded per second
     self.audioData = [] # creates a list to store the audio bytes recorded
-    import sys
-    importlib.reload(sys.modules['audiostream']) # reloads the audiostream module - thought this might solve the problem; it doesn't!!
+    #import sys
+    #importlib.reload(sys.modules['audiostream']) # reloads the audiostream module - thought this might solve the problem; it doesn't!!
     self.mic = get_input(callback=self.micCallback, rate=8000, source='default', buffersize=2048) # initialises the method get_input from the module 'audiostream' with the properties required to ensure the audio is recorded correctly
 
 def micCallback(self, buffer):
     # method which is called by the method 'get_input' to store recorded audio data (each buffer of audio samples)
     self.audioData.append(buffer) # appends each buffer (chunk of audio data) to variable 'self.audioData'
+    print('size of frames: ' + len(self.audioData))
 
 def start(self):
     # method which begins the process of recording the audio data
@@ -91,8 +92,8 @@ def stop(self):
     self.mic.stop() # stops recording audio
     return self.audioData    
     
-messageFile_voice = SoundLoader.load("recording2.wav")
-messageFile_voice.play()    
+#messageFile_voice = SoundLoader.load("recording2.wav")
+#messageFile_voice.play()    
     
 if __name__=='__main__':
     MyApp().run()    

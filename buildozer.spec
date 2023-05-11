@@ -1,10 +1,10 @@
 [app]
 
 # (str) Title of your application
-title = Audio2
+title = Audio3
 
 # (str) Package name
-package.name = c4k_tflite_audio2
+package.name = c4k_tflite_audio3
 
 # (str) Package domain (needed for android/ios packaging)
 package.domain = org.example
@@ -40,8 +40,7 @@ version = 0.1
 #requirements = python3,kivy,camera4kivy,gestures4kivy,numpy,tflite-runtime,kivymd,pandas,autopoint,gettext
 #requirements = python3,kivy,camera4kivy,gestures4kivy,numpy,tflite-runtime,kivymd,requests,urllib3,chardet,idna,kivy_garden.graph,audiostream
 
-requirements = python3,kivy,camera4kivy,gestures4kivy,numpy,tflite-runtime,kivymd,requests,urllib3,chardet,idna,kivy_garden.graph,git+https://github.com/kivy/audiostream.git,Cython
-
+requirements = python3,kivy,camera4kivy,gestures4kivy,numpy,tflite-runtime,kivymd,requests,urllib3,chardet,idna,kivy_garden.graph,git+https://github.com/kivy/audiostream.git
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
 # requirements.source.kivy = ../../kivy
